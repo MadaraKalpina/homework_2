@@ -1,0 +1,310 @@
+body {
+  color: black; 
+  margin: 0; 
+  font-family: 'Raleway', sans-serif;
+  font-family: 'Nunito', sans-serif;
+  background-color: #F4ECE5; 
+}
+
+main {
+  margin: 20px;
+}
+
+main > div {
+  padding: 20px;
+  margin: 40px 0; 
+}
+
+footer {
+  padding: 20px 0 50px; 
+  display: grid; 
+  justify-content: center;
+}
+
+h1 { 
+  font-size: 58px; 
+  margin: 20px 0 0; 
+}
+
+h2 { 
+  font-size: 38px; 
+  margin: 20px 0 0; 
+}
+
+p {
+  text-align: left; 
+}
+
+.menu {
+  text-transform: uppercase;
+}
+
+a {
+  text-decoration: none; 
+  color: black;
+}
+
+a:hover {
+  color: #e8c5a6; 
+  text-decoration: underline;
+  transform: scale(1.02);
+}
+
+
+header {
+  background-image: linear-gradient( rgba(244, 236, 229, 0), rgba(244, 236, 229, 0.192)), url(https://images.unsplash.com/photo-1573554394544-930a4cf6fc66?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1952&q=80);
+  background-size: cover; 
+  background-position: center; 
+  height: 500px;
+  position: relative; 
+  padding: 20px 0 0 0;
+  justify-items: center;
+}
+
+.brand {
+  background-image: url(https://images.vexels.com/media/users/3/137479/isolated/preview/19939e8d7a742bbfac2f5519108e216e-mountain-climbing-hiking-snow-by-vexels.png);
+  background-size: contain; 
+  background-position: top; 
+  background-repeat: no-repeat;
+  width: 65px;
+  height: auto;
+}
+
+header h1 {
+ position: absolute;
+ bottom: 20px; 
+ left: 20px;
+ text-align: left;
+}
+
+.hero-CTA {
+  text-align: center;
+  align-self: center;
+}
+
+.side-bar {
+  border-left: 5px solid black;
+}
+
+.hero-CTA img {
+  height: 50px; 
+}
+
+div.ad {
+  background-image: url(https://images.unsplash.com/photo-1460469235493-43425878ad2d?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1864&q=80);
+  background-size: cover; 
+  background-position: center; 
+}
+
+.flex {
+  display: flex;
+  flex-direction: row; 
+  align-items: stretch; 
+  flex-wrap: wrap; 
+  justify-content: space-between;
+}
+
+.grid {
+  display: grid;
+  align-items: stretch; 
+}
+
+@media only screen and (min-width: 992px) {
+
+  header.grid {
+    grid-template-columns: repeat(12, 1fr);
+    grid-template-areas: 
+    "b b n n n n n n n t t t";
+    
+  }
+
+  .brand {
+    grid-area: b;
+  }
+
+  .nav {
+    grid-area: n;
+  }
+
+  .tools {
+    grid-area: t;
+  }
+
+  main.grid {
+    grid-template-columns: repeat(12, 1fr);
+    grid-template-areas: 
+    "hf hf hf hf hf hf hc hc hc ad ad ad "
+    "bf bf bf bl bl bl bl bl bl sb sb sb"
+  }
+
+  .hero-feature {
+    grid-area: hf; 
+  }
+
+  .hero-CTA {
+    grid-area: hc; 
+  }
+
+  .body-feature {
+    grid-area: bf; 
+  }
+
+  .body-listing {
+    grid-area: bl; 
+    padding: 0 70px 0 30px;
+}
+
+  .side-bar {
+    grid-area: sb; 
+  }
+
+  .side-bar-img {
+    display: none;
+  }
+
+  div.ad {
+    grid-area: ad;
+  }
+}
+
+@media only screen and (max-width: 991px) and (min-width: 576px){
+
+  header.grid {
+    grid-template-columns: repeat(12, 1fr);
+    grid-template-areas: 
+    "b b n n n n n n n t t t"
+  }
+
+  .brand {
+    grid-area: b;
+  }
+
+  .nav {
+    grid-area: n;
+  }
+
+  .tools {
+    grid-area: t;
+  }
+
+  main.grid {
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-areas: 
+    "hf hf hf"
+    "hc hc hc"
+    "bf bf ad"
+    "bl bl bl"
+    "sb si si" 
+  }
+
+  .hero {
+    grid-area: h; 
+    flex-direction: column;
+  }
+
+  .hero-feature {
+    grid-area: hf; 
+  }
+
+  .hero-CTA {
+    grid-area: hc; 
+  }
+
+  .body-feature {
+    grid-area: bf; 
+
+  }
+
+  .body-listing {
+    grid-area: bl; 
+  }
+
+  .side-bar {
+    grid-area: sb; 
+  }
+
+  .side-bar-img {
+    grid-area: si; 
+    background-image: url(https://images.unsplash.com/photo-1541411438265-4cb4687110f2?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1868&q=80);
+  background-size: cover; 
+  background-position: top; 
+  }
+
+  div.ad {
+    grid-area: ad;
+  }
+
+}
+
+@media only screen and (max-width: 575px) {
+
+  header.grid {
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 70px auto;
+    grid-template-areas: 
+    "b b"
+    "n t"
+  }
+
+  .brand {
+    grid-area: b;
+    width: 100%;
+  }
+
+  .nav {
+    grid-area: n;
+  }
+
+  .tools {
+    grid-area: t;
+  }
+
+  header {
+  height: 350px;
+  }
+
+  h1 {
+    font-size: 45px;
+  }
+
+  main.grid {
+    grid-template-columns: 1fr;
+    grid-template-areas: 
+    "hc"
+    "bf"
+    "ad"
+    "bl"    
+  }
+
+  .hero-CTA {
+    grid-area: hc; 
+  }
+
+  .hero-feature {
+    display: none;
+  }
+
+  .body-feature {
+    grid-area: bf; 
+  }
+
+  .body-listing {
+    grid-area: bl; 
+  }
+
+  .side-bar {
+    display: none; 
+  }
+
+  .side-bar-img {
+    display: none;
+  }
+
+  div.ad {
+    grid-area: ad;
+    height: 130px;
+  }
+
+
+}
+
